@@ -9,7 +9,7 @@ import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { TaskComponent } from './component/task/task.component';
 import { SearchFilterPipe } from './pipes/filterList.pipe';  
 import { FormsModule } from '@angular/forms';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
