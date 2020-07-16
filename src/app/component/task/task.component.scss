@@ -1,0 +1,27 @@
+.search-box {
+    margin-top: 70px;
+}
+
+.search-results {
+    margin-top: 20px;
+    .title-text {
+        font-size: 24px;
+        font-weight: 600;
+    }
+}
+.logout-logo {
+    position: absolute;
+    top:15px;
+    right: 20px;
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
+.viewTypeIcon {
+    width: 20px;
+    height: 20px;
+}
+a {
+    cursor: pointer;
+}

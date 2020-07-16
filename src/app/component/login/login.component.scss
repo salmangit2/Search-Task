@@ -1,0 +1,64 @@
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
+
+body {
+  height: 100vh;
+  .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    div {
+      width: 100%;
+    }
+
+    .card-signin {
+      border: 0;
+      border-radius: 1rem;
+      box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+
+      .card-title {
+        margin-bottom: 2rem;
+        font-weight: 300;
+        font-size: 1.5rem;
+      }
+
+      .card-body {
+        padding: 2rem;
+      }
+
+      .form-signin {
+        width: 100%;
+
+        .form-label-group {
+          position: relative;
+          margin-bottom: 1rem;
+          .is-invalid {
+            border: 1px solid red;
+          }
+          input {
+            height: 40px !important;
+            border-radius: 2rem;
+          }
+        }
+
+        .btn {
+          cursor: pointer;
+          font-size: 80%;
+          border-radius: 5rem;
+          letter-spacing: .1rem;
+          font-weight: bold;
+          padding: 1rem;
+          transition: all 0.2s;
+        }
+        .btn:disabled {
+          cursor: not-allowed;
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}
