@@ -11,7 +11,7 @@ export class LoginService {
   constructor() { }
 
   getToken() {
-    if (localStorage.getItem('User') == 'sal@gmail.com' && localStorage.getItem('Password') == 'Pa$$word') {
+    if (localStorage.getItem('User') === 'sal@gmail.com' && localStorage.getItem('Password') === 'Pa$$word') {
       return true;
     } else {
       this.subject.next('Enter valid credentials to proceed further, Thank You.');

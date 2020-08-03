@@ -11,10 +11,10 @@ export class TaskComponent implements OnInit {
   taskList: any;
   search: FormGroup;
   cardViewBoolean: boolean;
-  constructor(private router:Router) {
+  constructor(private router: Router) {
     this.search = new FormGroup({
       searchText: new FormControl('')
-   })
+   });
   }
 
   ngOnInit(): void {

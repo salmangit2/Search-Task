@@ -11,7 +11,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
   error: string;
-  constructor(private fb:FormBuilder, private router:Router, private loginService: LoginService) {
+  constructor(private fb: FormBuilder, private router: Router, private loginService: LoginService) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.email, Validators.required]),
       password: new FormControl('', Validators.required) });
@@ -23,10 +23,11 @@ export class LoginComponent implements OnInit {
   login() {
     localStorage.setItem('User', this.loginForm.controls['email'].value);
     localStorage.setItem('Password', this.loginForm.controls['password'].value);
-    this.loginService.getErrors().subscribe((error)=> {
+    this.loginService.getErrors().subscribe((error) => {
       this.error = error;
-    })
+    });
     this.router.navigate(['/Task']);
   }
-  
 }
+
+
