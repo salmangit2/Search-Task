@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TaskService } from 'src/app/services/task.service';
+import { Task } from 'src/app/model/task-list.model';
 
 @Component({
   selector: 'app-task',
@@ -9,7 +10,7 @@ import { TaskService } from 'src/app/services/task.service';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
-  taskList: any;
+  taskList: Task[];
   search: FormGroup;
   cardViewBoolean: boolean;
   constructor(private router: Router, private taskService: TaskService) {
@@ -19,7 +20,7 @@ export class TaskComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.taskService.taskService().subscribe((data) => {
+    this.taskService.taskService().subscribe((data: Task[]) => {
       this.taskList = data;
     })
   }
