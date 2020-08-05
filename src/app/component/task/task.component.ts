@@ -22,7 +22,7 @@ export class TaskComponent implements OnInit {
   ngOnInit(): void {
     this.taskService.taskService().subscribe((data: Task[]) => {
       this.taskList = data;
-    })
+    });
   }
 
   logout() {
