@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+//import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TaskService } from 'src/app/services/task.service';
 import { Task } from 'src/app/model/task-list.model';
@@ -11,12 +11,13 @@ import { Task } from 'src/app/model/task-list.model';
 })
 export class TaskComponent implements OnInit {
   taskList: Task[];
-  search: FormGroup;
+  //search: FormGroup;
   cardViewBoolean: boolean;
+  searchText: string;
   constructor(private router: Router, private taskService: TaskService) {
-    this.search = new FormGroup({
-      searchText: new FormControl('')
-   });
+  //   this.search = new FormGroup({
+  //     searchText: new FormControl('')
+  //  });
   }
 
   ngOnInit(): void {

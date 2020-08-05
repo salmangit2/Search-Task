@@ -1,8 +1,8 @@
 <div class="container">
     <a class='logout-logo' (click)='logout()'><img src="../../../assets/images/logout-logo.jpg"> Logout</a>
     <div class="row">
-        <div class="input-group mb-3 search-box" [formGroup]='search'>
-            <input type="text" class="form-control" formControlName='searchText' placeholder="Search with title">
+        <div class="input-group mb-3 search-box">
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search with title">
         </div>
         <div class="col-md-12 search-results">
             <span class="title-text">Results</span>
@@ -23,7 +23,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let task of taskList | searchfilter: this.search.controls['searchText'].value">
+                        <tr *ngFor="let task of taskList | searchfilter: searchText">
                             <td>
                                 <div>
                                     <a href="#" class="d-block mb-4 h-100">
@@ -35,7 +35,7 @@
                             <td>{{task.title}}</td>
                             <td>{{task.url}}</td>
                         </tr>
-                        <tr *ngIf="this.search.controls['searchText'].value !== '' && (taskList | searchfilter: this.search.controls['searchText'].value).length === 0">
+                        <tr *ngIf="searchText !== '' && (taskList | searchfilter: searchText).length === 0">
                             No results found
                         </tr>
                     </tbody>
@@ -48,7 +48,7 @@
             </div>
             <div class="card-columns" *ngIf="cardViewBoolean">
                 <div class="card"
-                    *ngFor="let task of taskList | searchfilter: this.search.controls['searchText'].value">
+                    *ngFor="let task of taskList | searchfilter: searchText">
                     <img class="card-img-top" src="{{task.thumbnailUrl}}" alt="Card image"
                         style="width:100%; height:250px">
                     <div class="card-body">
