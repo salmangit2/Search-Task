@@ -35,7 +35,7 @@
                             <td>{{task.title}}</td>
                             <td>{{task.url}}</td>
                         </tr>
-                        <tr *ngIf="(taskList | searchfilter: this.search.controls['searchText'].value).length === 0">
+                        <tr *ngIf="this.search.controls['searchText'].value !== '' && (taskList | searchfilter: this.search.controls['searchText'].value).length === 0">
                             No results found
                         </tr>
                     </tbody>
